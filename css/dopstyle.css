@@ -5,12 +5,26 @@
 .top{
     background-color: #F7BE81;
 	margin-top:1%;
+	margin-bottom:2%;
+	padding:4%;
+} 
+.top2{
+    background-color: #F7BE81;
 	margin-bottom:3%;
 }   
 
+.space{
+    background-color: #F7BE81;
+    font-size: 2rem;
+	margin-bottom:3%;
+	text-align:center;
+	padding:10%;
+}
 .square{
     background-color: #F7BE81;
     font-size: 2rem;
 	margin-bottom:3%;
+	text-align:center;
+	padding:4% 0% 4% 0%; 
 }
 
