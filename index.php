@@ -1,22 +1,28 @@
 <?php
-include "lib/const.php";
-$path="inc/";
-$curURL=(array_pop(explode("=",$_SERVER['REQUEST_URI'])));
-include "lib/classGr.php";
-$primo=new site;
-header('Content-Type: text/html; charset=utf-8');		
-$id=strtolower(trim(strip_tags($_GET['id'])));
-switch ($id) {
-	case "$curURL": 
-					//echo $curURL;
+	include "lib/const.php";
+	include "lib/function.php";
+	$path="inc/";
+	$curURL=(array_pop(explode("=",$_SERVER['REQUEST_URI'])));
+//$curURL2=parse_url($_SERVER['REQUEST_URI']);
+	include "lib/classGr.php";
+	$primo=new site;
+	header('Content-Type: text/html; charset=utf-8');		
+	$id=strtolower(trim(strip_tags($_GET['id'])));
+/*	print_r ($curURL2);
+	echo "<br>curURL = ".$curURL;
+*/	
+switch ($id) {	
+	case "$curURL":
 					$header=$primo->photoshop($curURL)['header']; 
 					$title=$primo->photoshop($curURL)['title']; 
 					$content=$primo->photoshop($curURL)['content']; 
-					break;
+					$parent=$primo->photoshop($curURL)['parent'];
+					break;				
 	default: 
 			$title=$primo->home()['title'];
 			$header=$primo->home()['header'];
 			$content=$primo->home()['startMenu'];
+			$parent=$primo->home()['parent'];			
 }
 ?>
 <!doctype html>
@@ -29,8 +35,7 @@ switch ($id) {
  </head>
  <body>
 	<?
-		//echo $curURL;
-	//	echo $_SERVER['REQUEST_URI'];
+//	print_r(parse_url($_SERVER['REQUEST_URI']));
 		include $primo->body()['viewFile'];
 	?>
   <script src="js/jquery.min.js"></script>

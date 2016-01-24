@@ -19,14 +19,15 @@
 	<div class="text-center">
 		 <div class="row ">
 			<div class="col-md-4 top2">
-			<h3>
-				<? 
+			<h3>123
+				<?/* 
 					
 					include $title; 
 					if (((array_pop(explode("/",$_SERVER['REQUEST_URI'])))!=="index.php") AND (!(array_pop(explode("/",$_SERVER['REQUEST_URI'])))==NULL))
 						{
 							echo "<a href='#' OnClick='history.back();'>Вернутся назад</a>";
-						};	 
+						};
+				*/		
 				?>
 			</h3>		
 			</div>
@@ -38,10 +39,7 @@
 			</div>
 		</div>	
 	</div>	
- 
-
-
- 
+	<?include $parent;?>
 	<!--сюда выводится контент -->
 	<?
 		include $content;

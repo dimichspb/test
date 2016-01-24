@@ -1,0 +1,9 @@
+<? echo $squareNumber ?>
+<ol class="breadcrumb">
+<!--главная страница-->
+  <li><a href="index.php">Главная</a></li>
+<!--ссылка на номер квадрата и его название, значение в файле const.php, название из файла title.html--> 
+  <li><a href="index.php?id=<?echo square1?>"><? include "inc/".square1."/title.html"?></a></li>
+<!--название текущей страницы--> 
+  <li class="active"><?echo square1_1 ?></li>
+</ol>
