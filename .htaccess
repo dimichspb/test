@@ -1,0 +1,11 @@
+Order Allow,Deny
+Allow from all
+AddDefaultCharset utf-8
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !^/css/
+RewriteCond %{REQUEST_URI} !^/inc/
+RewriteRule . index.php
+
+#RewriteCond %{REQUEST_URI} .css$
+#RewriteCond %{css} !-d

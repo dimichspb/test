@@ -4,19 +4,19 @@
 
 .top{
     background-color: #F7BE81;
-	margin-top:1%;
+	margin-top:0%;
 	margin-bottom:2%;
-	padding:4%;
+	padding:3%;
 } 
 .top2{
     background-color: #F7BE81;
-	margin-bottom:2%;
+	margin-bottom:1%;
 }   
 
 .space{
     background-color: #F7BE81;
     font-size: 2rem;
-	margin:6% 0% 6% 0%;
+	margin:0% 0% 6% 0%;
 	text-align:center;
 	padding:10%;
 }
