@@ -1,6 +1,6 @@
 <?
 class photoshop1{
-	function photoshop1(){
+	function home(){
 		include "inc/".square1."/return.php";
 		return $returnArray;
 	}
@@ -18,7 +18,7 @@ class photoshop1{
 	}
 };
 class photoshop2{
-	function photoshop2(){
+	function home(){
 		include "inc/".square2."/return.php";
 		return $returnArray;
 	}
@@ -35,7 +35,7 @@ class photoshop2{
 		return $returnArray;
 	}
 }
-class site{
+class Site{
 	function body(){
 		return[
 				'viewFile'=>'inc/body.html'

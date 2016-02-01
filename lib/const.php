@@ -1,4 +1,5 @@
 <?php
+// константы для навигации
 define ('square1', 'photoshop1');
 define ('square2', 'photoshop2');
 define ('square3', 'photoshop3');
@@ -13,3 +14,6 @@ define ('square2_2', 'mp3');
 define ('square2_3', 'ogg');
 define ('homeName', 'Главная');
 define ('topMenu', 'topMenu.html');
+
+// пути
+define ('path', 'inc');

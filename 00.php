@@ -1,24 +1,13 @@
 <?php
 	require "lib/includnik.php";
 //	header('Content-Type: text/html; charset=utf-8'); перенесено в боди
+//	$path="inc"; перенесено в файл с константами
+	$url=explode("/", trim($_SERVER['REQUEST_URI'], "/"));
+	$id=$url[0]; 
+	$item=$url[1];
 	$siteObject=new Site();
-	$url=trim($_SERVER['REQUEST_URI'], "/");
-
-$route= (!empty($url))	?	$route=explode("/", $url)	:	$route=explode("/", 'site/home'); 
-$id=$route[0]; 
-$item=$route[1];	
-if (empty($item)) $item='home';												 
-if (!class_exists($id) || (!method_exists($id, $item)))  {$id='site'; $item='page404';};					 
-//echo $id;
-$contentObject=new $id;
-$header=$contentObject->$item()['header'];
-$title=$contentObject->$item()['title'];
-$content=$contentObject->$item()['content'];
-$parent=$contentObject->$item()['parent'];
-
-
-
-/*	
+	//echo $id."<-->".$item";
+	//echo ($_SERVER['REQUEST_URI']);	
 if (!empty($id)) //если строка адреса пустая
 {
 	if (class_exists($id)) //если класс существует
@@ -58,7 +47,6 @@ else //вывод если параметров нету, главная стр�
 	$parent=$siteObject->home()['parent'];
 	$content=$siteObject->home()['content'];
 }
-*/
 ?>
 <!doctype html>
 <html>
