@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title><? include $returnArray['header']; ?></title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/dopstyle.css" rel="stylesheet">
+  <script>
+	function showBorder($id){
+		document.getElementById($id).style.border='1px dotted gray';
+	};
+	function fontWeightBold($id){
+		document.getElementById($id).style.fontWeight='bold';
+	};
+	function hideBorder($id){
+		document.getElementById($id).style.border='1px solid white';
+	}
+	function fontWeightNormal($id){
+		document.getElementById($id).style.fontWeight='normal';
+	};
+  </script>
+ </head>
+<body>
+	<div class='container'>
+		<div class="text-center ">
+			 <div class="row border">
+			 
+				<div class="col-xs-12  hidden-md hidden-lg">			
+					<h2><?=$constant['name']?></h2>		
+				</div>
+				
+				<div class="col-md-9 topLeft hidden-xs hidden-sm">
+					<div class='primorskoe'><h2><?=$constant['name']?></h2>
+					</div>
+			<!--	<img class="img-responsive" src='inc/site/top0.jpg'>
+			-->		</div>
+				
+				<div class="col-md-3 topRight left hidden-xs hidden-sm " >			
+					<?= $constant['telefon']?><br>
+					<?= $constant['mail']?><br><br>
+					<?= $constant['mainOfis']?>
+				</div>
+				
+			</div>	
+		</div>		
+		<div class="text-center">
+			<div class="row ">
+				<div class="col-md-4 top2">
+					<a href='#'>	
+						<?=$constant['top21Title']?>	
+					</a>	
+				</div>				
+				<div class="col-md-4 top2">
+					<a href='#'>	
+						<?=$constant['top22Title']?>	
+					</a>	
+				</div>
+				<div class="col-md-4 top2">
+					<a href="<?=$constant['top3']?>" title='<?=$constant['top3Bread']?>'>		
+						<?=$constant['top23Title']?>	
+					</a>	
+				</div>			
+			</div>	
+		</div>	
+		<?
+			include $returnArray['parent'];
+			include $returnArray['content'];
+		?>
+	</div>
+
+	  <script src="js/jquery.min.js"></script>
+	  <script src="js/bootstrap.min.js"></script>
+ </body>
+ </html>

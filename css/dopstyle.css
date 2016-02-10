@@ -1,30 +1,143 @@
+html, body .container{
+	height:100%;
+}
 .container{
 	width:100%;
+	min-width:320px;
 }
-
-.top{
-    background-color: #F7BE81;
-	margin-top:0%;
-	margin-bottom:2%;
-	padding:3%;
+.primorskoe{
+	color:white;
+	font-size: 28px;
+	font-weight:bold;
+	text-align: left;
+	padding:0% 0% 10% 2% ;
+	font-family: verdana, Tahoma, sans-serif, arial;
+}
+.breadcrumb{
+	font-family: Helvetica, Tahoma, sans-serif, arial;
+}
+.topLeft{
+	padding:0%;	
+	background:	url(../inc/site/top0.jpg);
+	background-size: 100% 100%;
+}
+.topRight{
+	padding-top:1%;
+	font-family: Helvetica, Tahoma, sans-serif, arial;	
 } 
+.border{
+	border:1px solid gray;
+	display:	block;
+	background-color: #99CCFF;
+}
+ .left {
+	text-align:right;
+	letter-spacing: 1px;
+	line-height: 1.5;
+}
+/* верхнее меню*/
 .top2{
-    background-color: #F7BE81;
+    background-color: #B3D9FF;
+	margin-top:1%;
 	margin-bottom:1%;
-}   
-
+	padding:1%;
+	font-size:18px;
+	font-family: verdana, Tahoma, sans-serif, arial;
+}  
+/* ссылка верхнее меню*/
+.top2 a:hover{
+	color:white !important;
+	background-color: #99CCFF;
+	border: 1px solid green;
+	padding:1% 3%;	
+	text-decoration: none !important;
+}
+/* квадраты меню*/
+.standartfont{
+	font-size: 14px;
+	font-weight: normal;
+}
+.space2{ /*test*/
+	font-size: 20px;
+	text-align:center;
+	font-weight: bold !important;	
+	margin:0% 0% 5% 0%;
+	height: 200px;
+}
 .space{
-    background-color: #F7BE81;
-    font-size: 2rem;
-	margin:0% 0% 6% 0%;
+	font-size: 20px;
 	text-align:center;
-	padding:10%;
-}
-.square{
-    background-color: #F7BE81;
-    font-size: 2rem;
-	margin-bottom:3%;
-	text-align:center;
-	padding:4% 0% 4% 0%; 
+	padding:8%;
+	font-weight: bold !important;	
 }
 
+.thumbnail {
+	background-color: #FFD291;
+	margin:0% 8% 10% 8%;
+	border: 1px solid #99CCFF;
+	border-radius: 0px;
+	-webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+.thumbnail:hover{
+	background-color: #99CCFF;
+}
+.caption h3{	
+	font-family: helvetica, sans-serif, arial;
+    font-size: 20px;
+	letter-spacing: 2px;
+	line-height: 1.2;
+	text-decoration: none !important;
+	font-family: courier, Tahoma, sans-serif, arial;
+}
+.lead a:hover, .caption :hover{
+	font-weight: bold;
+	color:deepblue;
+}
+ a:hover,
+ a:focus {
+  color: red;
+  text-decoration: none;  
+ }
+.a{
+	color:black;
+ }
+.textPrimary{
+	font-size:20px;
+	padding-bottom: 4px;
+	color:black;
+	display: table;
+	font-family: courier, Tahoma, sans-serif, arial;
+ }
+.textPrimary a{
+	color:black;
+	display: table;
+ }
+ .textSecondary {
+	padding-left: 1%;
+	padding-bottom:2%;
+ }
+.text-border{
+	border:	1px solid white;
+	padding-left: 1%;
+ }
+.textOnPage{
+	padding-left: 2%;
+	padding-right: 10%;
+}
+.cube{
+	border:	1px solid gray;
+	margin:0% 8% 10% 8%;
+	padding: ;
+	background-color: #CDCAFF;
+}
+.txt{
+	position: ;
+	text-align: right;
+	padding: 3% 3% 0 0;
+	font-size: 20px;
+}
+.img-responsive{
+	padding: 0% 0% 2% 2% ;
+	width:100px;
+}
