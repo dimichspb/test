@@ -1,17 +1,30 @@
 <?php
-require 'lib/includnik.php';
+require 'lib/includnik.php'; // принято все называть на английском языке.
 
 $url=trim($_SERVER['REQUEST_URI'], '/');
 $route= (!empty($url))	?	$route=explode('/', $url)	:	$route=explode('/', 'site/home'); 
+/**
+ * правильно было бы написать так:
+ * $route = !empty($url)? explode('/', $url): explode('/', 'site/home');
+ * 
+ * Неплохо, какие-то стандартные вещи выносить в константы и размещать их в начале файла. 
+ * Это поможет в будущем легко изменить какие-то настройки, без необходимости искать повторния по всему коду.
+ * Например, можно вынести URL разделитель и маршрут к главной стронице в константы и потом использовать уже их.
+ * 
+ */
+ 
 $id=$route[0]; 
-$item=$route[1];	
-if (empty($item)) $item='home';												 
-if (!class_exists($id) || (!method_exists($id, $item)))  {$id='site'; $item='page404';};		 
+$item=$route[1]; // если путь состоит из одной части, то будет предупреждение о том, что элемент не задан
+if (empty($item)) $item='home'; // может быть, лучше сделать по примеру $route ?
+// $item = !isset($route[1])? $route[1]: 'home';
+if (!class_exists($id) || (!method_exists($id, $item)))  {$id='site'; $item='page404';}; // затрудняет чтение кода		 
 //echo $id;
-function __autoload($id){
-	@include 'inc/'.$id.'/'.$id.'.php';
+function __autoload($id){ // функции принято размещать в начале кода. и вообще, желательно выносить в отдельный файл
+	@include 'inc/'.$id.'/'.$id.'.php'; // __autoload устарешвая, лучше использовать расширение spl, оно позволяет определять несколько автозагрузчиков
 }
 $siteObject=new Site();
-$contentObject=new $id();
-$returnArray=$contentObject->$item($constant);
-include $siteObject->body()['body'];
+$contentObject=new $id(); // почему не назвать класс и объект controller? так будет понятнее
+$returnArray=$contentObject->$item($constant); //совершенно непонятная конструкция.
+include $siteObject->body()['body']; // зачем выносить данные в массив, потом инклудить? почему нельзя просто вызвать метод контроллера и доверить этому методу вывод информации?
+// по сути, роутер должен только получить строку адреса и вызвать соответствующий метод соответствующего контроллера. Больше никаких действий от роутера не требуется.
+// контроллер потому и называется контроллером, что он контроллирует дальшнейшие действия.
